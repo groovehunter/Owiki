@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<%= debug @res %>
+
+<%= @res.inspect %>
+
+<p>
+  <b>Content:</b><br>
+  <%= @entry.content %>
+</p>
+
+<ul>
+<% for option in @res %>
+<li>
+  <%= debug option %>
+  <%= option %>
+</li>
+<% end %>
+</ul>
+
+<br />
+<br />
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>

@@ -1,0 +1,77 @@
+
+#header { background-color: #6a8ab0; }
+#header a { color: #fff; }
+
+#menu { background:#d2d2df; }
+
+
+
+/*
+#content {
+background: #a7c7dc;
+background: -moz-linear-gradient(top, #a7c7dc 0%, #E1E9F7 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a7c7dc), color-stop(100%,#E1E9F7));
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7c7dc', endColorstr='#E1E9F7',GradientType=0 );
+}
+*/
+
+/* snazzy boxes */
+.xboxcontent {
+	background: #eee;
+	border: solid #eee;
+	padding: 5px;
+}
+.xb1 {
+	background:#eee;
+}
+.xb2, .xb3, .xb4 {
+	background:#6a8ab0;
+	border-left: 1px solid #6a8ab0;
+	border-right: 1px solid #6a8ab0;
+}
+
+
+/* headings der Ansichten */
+#title-archiv {
+    padding: 5px;
+	background-color: #175DB0;
+	color: #fff;
+}
+#title-aktuell {
+	padding: 5px;
+    background-color: #D16F72;
+	color: #000;
+}
+.title {
+    padding: 5px;
+    background-color: #ddd;
+    color: #000;
+}
+
+/* Tabellen allgemein */
+th a {
+    color: #000000;
+    text-decoration: none;
+}
+th a:active {
+    color: #6A8AB0;
+}
+th a:hover {
+    text-decoration: underline;
+}
+
+.simple { background: transparent; }
+
+
+#subform {
+font-size: 10pt;
+background: #a7c7dc; /* old browsers */
+background: -moz-linear-gradient(top, #a7c7dc 0%, #7AA4BF 100%); /* firefox */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a7c7dc), color-stop(100%,#7AA4BF)); /* webkit */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7c7dc', endColorstr='#7AA4BF',GradientType=0 ); /* ie */
+}
+
+#msg {
+	color: #d00;
+	font-weight: bold;
+}

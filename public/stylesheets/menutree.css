@@ -1,0 +1,68 @@
+.msub li {
+	width: 50px;
+}
+
+
+#menu {
+/*
+	position: absolute;
+	top: 0;
+*/
+	right: 0;
+	font-size: small;
+}
+
+#menu li {
+/*
+	display: inline;
+*/
+	width: 100px;
+	list-style: none;
+	float:left;
+	padding: 4px 7px 0px 7px;
+	text-align: center;
+}
+
+#menu li a {
+	display: block;
+	padding: 2px 3px;
+    color: #6A8AB0;
+    background-color: white;
+    text-decoration: none;
+}
+
+#menu li a:hover {
+    color: #ddd;
+    background-color: #6A8AB0;
+}
+
+#menu li ul {
+	display: none;
+	background-color: #ddd;
+}
+
+#menu li:hover ul, #menu li.hover ul {
+	position: absolute;
+	display: inline;
+/*	left: 0;  */
+/*	width: 99%;  subzeile statt dropdown */
+	width: 118px;
+	margin: -2px;
+	padding: 0px;
+}
+
+#menu li:hover li, #menu li.hover li {
+/*
+	float:left;
+*/
+}
+#menu li:hover li a, #menu li.hover li a {
+	color: #000;
+/*
+	width: 80%;
+*/
+}
+#menu li li a:hover {
+	color: #ddd;
+}
+

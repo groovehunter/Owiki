@@ -1,0 +1,61 @@
+body { 
+	/* text-align: center; */
+}   
+
+#header {
+    border-bottom: 2px solid #000;
+    height: 0px auto;
+	float: right;
+	margin-bottom: -1px;
+}
+
+#header div {
+	float: right;
+}
+#header a img {
+	float: left;
+	margin: 3px;
+}
+
+#menu, #footer {
+    overflow:hidden;
+/*
+*/
+}
+
+#secondary {
+	padding: 6px;
+	text-decoration: none;
+	font-size: 9pt;
+	float:right;
+}
+
+/* safari and opera need this */
+#header, #menu, #footer {
+	width:100%
+}
+
+/* safari and opera need this */
+#menu {
+    display:inline-block;
+	height: 0em auto;
+}
+
+/*
+#content {
+	padding: 2%;
+	margin-top: 5px;
+}
+
+#content #loginform {
+	width: 0 auto; 
+	margin: 0px auto;
+}
+*/
+
+#footer {
+	clear:left;
+}
+
+
+#subform { padding: 20px; }

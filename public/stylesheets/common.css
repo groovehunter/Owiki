@@ -1,0 +1,59 @@
+html { font-family: Verdana, Arial, Helvetica, SunSans-Regular, Sans-Serif; }
+img { border: none; }
+
+.debug { color: #aaa; }
+.debug a { color: #aaa; }
+
+.msg {
+    color: #da251d;
+    font-weight: bold;
+    font-size: 110%;
+    margin: 5px;
+}
+
+.simple {
+    padding: 3px 3px;
+    border: 1px;
+    vertical-align: middle;
+}
+.simple tr { height: 26px; }
+.simple td { padding: 6px; }
+
+
+.odd { background: #e8e8e8; }
+.even { background: #d7d7d7; }
+
+.bold	{
+    color: #000000;
+    font-weight: bold;
+    font-size: 12pt;
+}
+
+.small	{
+    color: #000000;
+    font-weight: normal;
+    font-size: 10pt;
+}
+.nobr {
+	font-style: italic;
+	white-space: nowrap;
+}
+
+.box {
+	margin: 6px;
+	padding: 8px;
+	max-width: 480px;
+	background: #ddd;
+	text-align: left;
+	color: #000;
+}
+
+#more {
+	padding-left:40px;
+	display:inline;
+}
+
+#subform li {
+	list-style: none;
+}
+

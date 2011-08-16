@@ -1,0 +1,32 @@
+/*
+*/
+#xsnazzy h3 {
+    font-size:1.2em;
+    border:0;
+}
+#xsnazzy h2, #xsnazzy h3, #xsnazzy p {margin:0 10px; padding:0;}
+#xsnazzy p {padding-bottom:0.5em;}
+#xsnazzy h2 {padding-top:0.5em;}
+#xsnazzy {
+    background: transparent;
+    margin:15px 1em 10px 1em;
+    width: auto;
+}
+.xtop, .xbottom {display:block; background:transparent; font-size:1px;}
+.xb1, .xb2, .xb3, .xb4 {display:block; overflow:hidden;}
+.xb1, .xb2, .xb3 {height:1px;}
+.xb2, .xb3, .xb4 {
+    border-left:1px solid #aaa; 
+    border-right:1px solid #aaa;
+}
+.xb1 { margin:0 5px; }
+.xb2 {margin:0 3px; border-width:0 2px;}
+.xb3 {margin:0 2px;}
+.xb4 {height:2px; margin:0 1px;}
+
+.xboxcontent {
+    display:block; 
+    border:0 solid #ccc; 
+    border-width:0 1px;
+}
+
