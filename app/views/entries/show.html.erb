@@ -1,23 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<%= debug @res %>
-
-<%= @res.inspect %>
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>
 
 <p>
   <b>Content:</b><br>
   <%= @entry.content %>
 </p>
 
-<ul>
-<% for option in @res %>
-<li>
-  <%= debug option %>
-  <%= option %>
-</li>
+<% for term in @entry.terms.order("name") %>
+  <%= term.name %><br>
 <% end %>
-</ul>
-
 <br />
 <br />
 

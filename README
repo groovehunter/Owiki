@@ -8,3 +8,12 @@ All entries have no title, just content
 All entries get semantically processed and all data generated is stored so the views can be sophistically generated 
 
 
+
+
+INSTALL
+
+download lingo, i used 1.7.0 and unpack in lib
+
+in root dir do bundle install
+
+

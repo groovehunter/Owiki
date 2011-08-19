@@ -1,4 +1,6 @@
 Owiki::Application.routes.draw do
+  resources :terms
+
   get "home/index"
 
   resources :entries

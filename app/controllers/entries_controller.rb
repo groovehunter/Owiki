@@ -16,14 +16,6 @@ class EntriesController < ApplicationController
   # GET /entries/1.xml
   def show
     @entry = Entry.find(params[:id])
-    #IO.new('content',"w").write(@entry.content)
-#    io = IO.new()
-    $stdout.print @entry.content
-    
-    lingo = Lingo.call(config='flo.cfg')
-#    @lines = @entry.content.split("\n")
-#    lingo.talk
-    @res = lingo.talk_to_me(@entry.content)
     
     respond_to do |format|
       format.html # show.html.erb
@@ -53,7 +45,8 @@ class EntriesController < ApplicationController
     @entry = Entry.new(params[:entry])
 
     respond_to do |format|
-      @entry.work
+      #@entry.process
+      @entry.splitwords
       if @entry.save
         format.html { redirect_to(@entry, :notice => 'Entry was successfully created.') }
         format.xml  { render :xml => @entry, :status => :created, :location => @entry }
@@ -71,6 +64,8 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       if @entry.update_attributes(params[:entry])
+        #@entry.process
+        @entry.splitwords
         format.html { redirect_to(@entry, :notice => 'Entry was successfully updated.') }
         format.xml  { head :ok }
       else
