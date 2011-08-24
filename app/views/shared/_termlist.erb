@@ -1,0 +1,6 @@
+<b>Terms</b>
+  <ul>
+  <% for term in terms %>
+    <li><%= link_to term.name, term_path(term) %></li>
+  <% end %>
+  </ul>
