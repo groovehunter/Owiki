@@ -16,4 +16,12 @@ download lingo, i used 1.7.0 and unpack in lib
 
 in root dir do bundle install
 
+gems in test
 
+- wordnet
+- linguistics
+
+
+TODO
+
+How to cache the processed texts? Store in filesystem (lingo stores intermediate result files) or strucutred in database? 
