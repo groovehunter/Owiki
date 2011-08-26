@@ -4,7 +4,15 @@
   <b>Name:</b>
   <%= @term.name %>
 </p>
-
+  <ul>
+  <% for entry in @entries %>
+    <li><%= link_to 'Entry', entry_path(entry) %></li>
+  <% end %>
+  </ul>
+<p>
+Anzahl Artikel mit diesem Begriff:
+<%= @term.entries.count %>
+</p>
 
 <%= link_to 'Edit', edit_term_path(@term) %> |
 <%= link_to 'Back', terms_path %>

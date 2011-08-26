@@ -1,18 +1,20 @@
 <p id="notice"><%= notice %></p>
 
+<p>
 <%= link_to 'Edit', edit_entry_path(@entry) %> |
-<%= link_to 'Back', entries_path %>
+<%= link_to 'Back', entries_path %> |
+<%= link_to 'Show', entry_path %>
+</p>
 
 <p>
   <b>Content:</b><br>
   <%= @entry.content %>
 </p>
 
-<% for term in @entry.terms.order("name") %>
-  <%= term.name %><br>
-<% end %>
-<br />
-<br />
+<%= render :partial => 'shared/termlist', :locals => { :terms => @entry.terms.order('name') } %>
 
+<p>
 <%= link_to 'Edit', edit_entry_path(@entry) %> |
-<%= link_to 'Back', entries_path %>
+<%= link_to 'Back', entries_path %> |
+<%= link_to 'Show', entry_path %>
+</p>

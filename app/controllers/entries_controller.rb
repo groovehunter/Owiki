@@ -1,4 +1,5 @@
 require 'lingo/lingo'
+#require 'rubygems'
 
 class EntriesController < ApplicationController
   # GET /entries
@@ -17,6 +18,26 @@ class EntriesController < ApplicationController
   def show
     @entry = Entry.find(params[:id])
     
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @entry }
+    end
+  end
+
+  def showlinked
+    @entry = Entry.find(params[:id])
+    lines = @entry.splitwords
+    ready = []
+    lines.each do |word|
+      if word.size > 5
+        ready << '<a href="/terms/'+word+'">'+word+'</a>'
+      else
+        ready << word
+      end
+    end
+    @text = ready.join(sep=' ')
+
+    @terms = @entry.terms.order('name')
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @entry }
@@ -46,7 +67,8 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       #@entry.process
-      @entry.splitwords
+      lines = @entry.splitwords
+      @entry.process_terms(lines)
       if @entry.save
         format.html { redirect_to(@entry, :notice => 'Entry was successfully created.') }
         format.xml  { render :xml => @entry, :status => :created, :location => @entry }
@@ -64,8 +86,9 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       if @entry.update_attributes(params[:entry])
-        #@entry.process
-        @entry.splitwords
+        lines = @entry.splitwords
+        @entry.process_terms(lines)
+
         format.html { redirect_to(@entry, :notice => 'Entry was successfully updated.') }
         format.xml  { head :ok }
       else

@@ -5,17 +5,21 @@
 <table>
   <tr>
     <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Size</th>
+    <th>Show</th>
+    <th>Linked</th>
+    <th>Edit</th>
+    <th>X</th>
   </tr>
 
 <% @entries.each do |entry| %>
   <tr>
-    <td><%= entry.content %></td>
+    <td><%= truncate(entry.content, :length=>200, :separator => ' ') %></td>
+    <td><%= entry.content.size %></td>
     <td><%= link_to 'Show', entry %></td>
+    <td><%= link_to 'Linked', '/entries/'+entry.id.to_s+'/showlinked/' %></td>
     <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
-    <td><%= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'X', entry, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

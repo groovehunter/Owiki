@@ -1,14 +1,22 @@
 
-
+<div id="menu">
+<div class="menutree">
 
 <ul>
-  <li>
-<%= link_to 'entries', entries_path %>
-
-  </li>
-  <li>
-<%= link_to 'terms', terms_path %>
-
-  </li>
+  <li>Entries</li>
+  <ul>
+    <li><%= link_to 'Index', entries_path %></li>
+    <li><%= link_to 'New', new_entry_path %></li>
+  </ul>
 </ul>
 
+<ul>
+  <li>Terms</li>
+  <ul>
+    <li><%= link_to 'Index', terms_path %></li>
+    <li><%= link_to 'New', new_term_path %></li>
+  </ul>
+</ul>
+  
+</div>
+</div>

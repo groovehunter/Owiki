@@ -1,5 +1,7 @@
 
 require 'lingo/lingo'
+#require 'wordnet'
+
 
 class Entry < ActiveRecord::Base
 
@@ -26,30 +28,36 @@ class Entry < ActiveRecord::Base
     logger.debug "content_out #{content_out}"
     f = File.open(content_out,"r")
     lines = f.readlines()
-    process_terms lines
+    lines
   end
 
   def splitwords
+
     lines = content.split(" ")
-    process_terms lines
+    lines
   end
 
   def process_terms(lines)
     lines.each do |line|
       if line.size > 5
-        line.gsub!(/[.,-_*+#!"§$%"{}]/,'')
+        line.strip!
+        line.gsub!(/[.,_*+#!"§$%"{}]/,'')
+        #lex = WordNet::Lexicon.new
+        #res = lex.grep line
+        #logger.debug "res #{res}"
         term = Term.where(:name => line).first
         if not term
           term = Term.new(:name => line, :count=>0)
         end
         term.count += 1
         if term.count > 1
-          logger.debug "term: #{term.name} #{term.count}"
+          logger.debug "term - name: #{term.name} count: #{term.count}"
         end
         if not terms.include? term
           terms << term
-          logger.debug "new term: #{term.name}"
+          logger.debug "new term of this entry, relation created"
         end
+        logger.debug "term count: #{term.count}"
       end
     end
   end

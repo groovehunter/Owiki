@@ -5,7 +5,14 @@ gem 'rails', '3.0.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'rake', '0.8.7' 
+#gem 'rake', '0.9.2'
 #gem 'sqlite3'
+#gem 'rbconfig'
+#gem 'pathname'
+gem 'bdb'
+gem 'sync'
+gem 'wordnet'
+
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -14,7 +21,7 @@ gem 'rake', '0.8.7'
 # gem 'capistrano'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
-# gem 'ruby-debug'
+gem 'ruby-debug'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 # Bundle the extra gems:

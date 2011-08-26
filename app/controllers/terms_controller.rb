@@ -15,6 +15,11 @@ class TermsController < ApplicationController
   def show
     @term = Term.find(params[:id])
 
+    @entries = @term.entries
+    logger.debug "entries #{@entries}"
+    @entries.each do |entry|
+      logger.debug "entry.id  #{entry.id}"
+    end
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @term }
@@ -40,17 +45,20 @@ class TermsController < ApplicationController
   # POST /terms
   # POST /terms.xml
   def create
-    @term = Term.new(params[:term])
-
-    respond_to do |format|
+    @term = Term.where(:name=>params[:term])
+    if not @term
+      @term = Term.new(params[:term])
       if @term.save
-        format.html { redirect_to(@term, :notice => 'Term was successfully created.') }
-        format.xml  { render :xml => @term, :status => :created, :location => @term }
+        redirect_to(@term, :notice => 'Term was successfully created.')
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @term.errors, :status => :unprocessable_entity }
+        render :action => "new"
       end
+
+    else
+      logger.debug "term name #{@term.name}"
+      redirect_to(@term, :notice=>'Term already exists')
     end
+    
   end
 
   # PUT /terms/1
