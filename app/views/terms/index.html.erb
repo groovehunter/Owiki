@@ -6,18 +6,16 @@
   <tr>
     <th>Name</th>
     <th>Count</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Edit</th>
+    <th>X</th>
   </tr>
 
 <% @terms.each do |term| %>
   <tr>
-    <td><%= term.name %></td>
+    <td><%= link_to term.name, term %></td>
     <td><%= term.count %></td>
-    <td><%= link_to 'Show', term %></td>
     <td><%= link_to 'Edit', edit_term_path(term) %></td>
-    <td><%= link_to 'Destroy', term, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'X', term, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

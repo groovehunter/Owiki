@@ -1,14 +1,18 @@
 <p id="notice"><%= notice %></p>
 
+<h3><%= @term.name %></h3>
+
 <p>
-  <b>Name:</b>
-  <%= @term.name %>
-</p>
   <ul>
   <% for entry in @entries %>
-    <li><%= link_to 'Entry', entry_path(entry) %></li>
+    <li>
+    <%= link_to 'Entry', entry_path(entry) %> &nbsp; 
+    <%= entry.get_context(@term.name).html_safe %>
+    </li>
   <% end %>
   </ul>
+</p>
+
 <p>
 Anzahl Artikel mit diesem Begriff:
 <%= @term.entries.count %>

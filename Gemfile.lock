@@ -78,7 +78,6 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.29)
-    wordnet (0.0.5)
 
 PLATFORMS
   ruby
@@ -89,4 +88,3 @@ DEPENDENCIES
   rake (= 0.8.7)
   ruby-debug
   sync
-  wordnet

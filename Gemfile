@@ -11,7 +11,7 @@ gem 'rake', '0.8.7'
 #gem 'pathname'
 gem 'bdb'
 gem 'sync'
-gem 'wordnet'
+#gem 'wordnet'
 
 
 # Use unicorn as the web server

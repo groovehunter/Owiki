@@ -67,12 +67,13 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       #@entry.process
-      lines = @entry.splitwords
-      @entry.process_terms(lines)
+      @entry.process
+      
       if @entry.save
         format.html { redirect_to(@entry, :notice => 'Entry was successfully created.') }
         format.xml  { render :xml => @entry, :status => :created, :location => @entry }
       else
+        logger.debug "save error"
         format.html { render :action => "new" }
         format.xml  { render :xml => @entry.errors, :status => :unprocessable_entity }
       end
@@ -86,8 +87,8 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       if @entry.update_attributes(params[:entry])
-        lines = @entry.splitwords
-        @entry.process_terms(lines)
+
+        @entry.process
 
         format.html { redirect_to(@entry, :notice => 'Entry was successfully updated.') }
         format.xml  { head :ok }
