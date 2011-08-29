@@ -1,11 +1,19 @@
 Owiki::Application.routes.draw do
 
-  resources :terms
-
   get "home/index"
 
   resources :entries
   match 'entries/:id/showlinked' => 'entries#showlinked', :as => :showlinked
+
+  #resources :terms
+
+#  match 'terms/:name/byname' => 'terms#showbyname', :as => :showbyname
+  match 'terms/:name'				=> 'terms#show' #byname', :as => :showbyname
+  match 'terms/:name/edit'	=> 'terms#edit' #byname', :as => :showbyname
+
+  root :to => "home#index"
+
+end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -60,6 +68,3 @@ Owiki::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
-  root :to => "home#index"
-
-end

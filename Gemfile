@@ -9,7 +9,7 @@ gem 'rake', '0.8.7'
 #gem 'sqlite3'
 #gem 'rbconfig'
 #gem 'pathname'
-gem 'bdb'
+#gem 'bdb'
 gem 'sync'
 #gem 'wordnet'
 

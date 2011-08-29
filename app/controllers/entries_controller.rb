@@ -1,4 +1,4 @@
-require 'lingo/lingo'
+#require 'lingo/lingo'
 #require 'rubygems'
 
 class EntriesController < ApplicationController

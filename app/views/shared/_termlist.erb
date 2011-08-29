@@ -1,6 +1,9 @@
 <b>Terms</b>
   <ul>
   <% for term in terms %>
-    <li><%= link_to term.name, term_path(term) %></li>
+    <li><%= link_to term.name, '/terms/'+term.name %></li>
+	<% if false %>
+		<li><%= link_to term.name, term_path(term) %></li>
+	<% end %>
   <% end %>
   </ul>

@@ -29,7 +29,6 @@ GEM
       activesupport (= 3.0.9)
     activesupport (3.0.9)
     arel (2.0.10)
-    bdb (0.2.6)
     builder (2.1.2)
     columnize (0.3.4)
     erubis (2.6.6)
@@ -83,7 +82,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bdb
   rails (= 3.0.9)
   rake (= 0.8.7)
   ruby-debug

@@ -13,7 +13,12 @@ class TermsController < ApplicationController
   # GET /terms/1
   # GET /terms/1.xml
   def show
-    @term = Term.find(params[:id])
+#    @term = Term.find(params[:id])
+    @term = Term.where(:name=>params[:name]).first
+
+		if not @term
+			format.html { redirect_to(@term, :notice => 'Term does not exist yet.') }
+		end
 
     @entries = @term.entries
     logger.debug "entries #{@entries}"
@@ -25,6 +30,25 @@ class TermsController < ApplicationController
       format.xml  { render :xml => @term }
     end
   end
+
+
+	def showbyname
+    @term = Term.where(:name=>params[:name]).first
+
+		if not @term
+			format.html { redirect_to(@term, :notice => 'Term does not exist yet.') }
+		end
+
+    @entries = @term.entries
+    logger.debug "entries #{@entries}"
+    @entries.each do |entry|
+      logger.debug "entry.id  #{entry.id}"
+    end
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @term }
+    end
+	end
 
   # GET /terms/new
   # GET /terms/new.xml
