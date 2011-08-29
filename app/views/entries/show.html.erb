@@ -1,9 +1,10 @@
-<p id="notice"><%= notice %></p>
 
 <p>
 <%= link_to 'Edit', edit_entry_path(@entry) %> |
 <%= link_to 'Back', entries_path %> |
-<%= link_to 'Show', entry_path %>
+<%= link_to 'Show', entry_path %> |
+<%= link_to 'Linked', '/entries/'+@entry.id.to_s+'/showlinked/' %>
+
 </p>
 
 <p>
@@ -16,5 +17,7 @@
 <p>
 <%= link_to 'Edit', edit_entry_path(@entry) %> |
 <%= link_to 'Back', entries_path %> |
-<%= link_to 'Show', entry_path %>
+<%= link_to 'Show', entry_path %> |
+<%= link_to 'Linked', '/entries/'+@entry.id.to_s+'/showlinked/' %>
+
 </p>

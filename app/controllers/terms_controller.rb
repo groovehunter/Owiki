@@ -15,9 +15,10 @@ class TermsController < ApplicationController
   def show
 #    @term = Term.find(params[:id])
     @term = Term.where(:name=>params[:name]).first
-
-		if not @term
-			format.html { redirect_to(@term, :notice => 'Term does not exist yet.') }
+		if @term.nil?
+      @term = Term.new
+      redirect_to( @term, :notice => "Term '#{params[:name]}' not exists yet" )
+      return
 		end
 
     @entries = @term.entries
@@ -34,9 +35,9 @@ class TermsController < ApplicationController
 
 	def showbyname
     @term = Term.where(:name=>params[:name]).first
-
-		if not @term
-			format.html { redirect_to(@term, :notice => 'Term does not exist yet.') }
+		if @term.nil?
+      @term = Term.new
+      redirect_to( @term, :notice => "Term '#{params[:name]}' not exists yet" )
 		end
 
     @entries = @term.entries

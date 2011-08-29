@@ -12,7 +12,7 @@
 
 <% @terms.each do |term| %>
   <tr>
-    <td><%= link_to term.name, term %></td>
+    <td><%= link_to term.name, 'terms/'+term.name %></td>
     <td><%= term.count %></td>
     <td><%= link_to 'Edit', edit_term_path(term) %></td>
     <td><%= link_to 'X', term, :confirm => 'Are you sure?', :method => :delete %></td>

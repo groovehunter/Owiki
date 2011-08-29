@@ -5,11 +5,12 @@ Owiki::Application.routes.draw do
   resources :entries
   match 'entries/:id/showlinked' => 'entries#showlinked', :as => :showlinked
 
-  #resources :terms
+  resources :terms, :except => [:show] #, :edit]
 
 #  match 'terms/:name/byname' => 'terms#showbyname', :as => :showbyname
+#  match 'terms/new'	=> 'terms#new'
   match 'terms/:name'				=> 'terms#show' #byname', :as => :showbyname
-  match 'terms/:name/edit'	=> 'terms#edit' #byname', :as => :showbyname
+#  match 'terms/:name/edit'	=> 'terms#edit'
 
   root :to => "home#index"
 

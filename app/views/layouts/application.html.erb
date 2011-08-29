@@ -11,6 +11,7 @@
 <div id="header">
   <%= link_to 'Owiki', '/' %>
 </div>
+  
 
 <div id="menu">
                 <div class="menutree">
@@ -22,7 +23,11 @@
 <div id="xsnazzy">
 <b class="xtop"><b class="xb1"></b><b class="xb2"></b><b class="xb3"></b><b class="xb4"></b></b>
 <div class="xboxcontent">
-  <%= yield %>
+<% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
+
+<%= yield %>
 <br />
 
 </div>
